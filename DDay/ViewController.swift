@@ -7,14 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        toolbar.item
+        tableView.delegate = self
+    }
+    @IBOutlet weak var tableView: UITableView!
+    
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 
-    @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var addBtn: UIBarButtonItem!
 }
 
