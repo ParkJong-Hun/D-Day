@@ -1,0 +1,8 @@
+. filter=lfs diff=lfs merge=lfs -text
+DDay filter=lfs diff=lfs merge=lfs -text
+DDay.xcodeproj filter=lfs diff=lfs merge=lfs -text
+DDay.xcworkspace filter=lfs diff=lfs merge=lfs -text
+Podfile filter=lfs diff=lfs merge=lfs -text
+Podfile.lock filter=lfs diff=lfs merge=lfs -text
+Pods filter=lfs diff=lfs merge=lfs -text
+bfg-1.14.0.jar filter=lfs diff=lfs merge=lfs -text
