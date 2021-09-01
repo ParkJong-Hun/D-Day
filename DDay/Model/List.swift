@@ -9,8 +9,10 @@ import Foundation
 
 class List {
     var list:String
+    var dday:Int
     
-    init(list:String) {
+    init(list:String, dday:Int) {
         self.list = list
+        self.dday = dday
     }
 }

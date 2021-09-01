@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,26 @@
 		6B4ABF4E26DDF1C70010A5D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4ABF4C26DDF1C70010A5D0 /* Main.storyboard */; };
 		6B4ABF5026DDF1C80010A5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4ABF4F26DDF1C80010A5D0 /* Assets.xcassets */; };
 		6B4ABF5326DDF1C80010A5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4ABF5126DDF1C80010A5D0 /* LaunchScreen.storyboard */; };
+		6BC34ECE26DF5878001BEF8E /* Pods_DDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC34ECD26DF5878001BEF8E /* Pods_DDay.framework */; };
+		6BC34ECF26DF5878001BEF8E /* Pods_DDay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC34ECD26DF5878001BEF8E /* Pods_DDay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6BC34ED026DF5878001BEF8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6BC34ECF26DF5878001BEF8E /* Pods_DDay.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4916ABE52811AA144BE18952 /* Pods-DDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDay.debug.xcconfig"; path = "Target Support Files/Pods-DDay/Pods-DDay.debug.xcconfig"; sourceTree = "<group>"; };
 		6B3F0DCB26DE3A9400DB9B00 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		6B4ABF4326DDF1C70010A5D0 /* DDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4ABF4626DDF1C70010A5D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +43,12 @@
 		6B4ABF4F26DDF1C80010A5D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B4ABF5226DDF1C80010A5D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B4ABF5426DDF1C80010A5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BC34EC626DF56F5001BEF8E /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BC34EC726DF56F5001BEF8E /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BC34ECD26DF5878001BEF8E /* Pods_DDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BC34ED126DF5AE6001BEF8E /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C157AF9ECFCC8C4F2B88EE2 /* Pods-DDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDay.release.xcconfig"; path = "Target Support Files/Pods-DDay/Pods-DDay.release.xcconfig"; sourceTree = "<group>"; };
+		CD23871FE68FC85BB5F0C77D /* Pods_DDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +56,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC34ECE26DF5878001BEF8E /* Pods_DDay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003C5CEDABD50726F3DDB9E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BC34ED126DF5AE6001BEF8E /* RealmSwift.framework */,
+				6BC34ECD26DF5878001BEF8E /* Pods_DDay.framework */,
+				6BC34EC626DF56F5001BEF8E /* Realm.framework */,
+				6BC34EC726DF56F5001BEF8E /* RealmSwift.framework */,
+				CD23871FE68FC85BB5F0C77D /* Pods_DDay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B3F0DCA26DE3A8400DB9B00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +88,8 @@
 			children = (
 				6B4ABF4526DDF1C70010A5D0 /* DDay */,
 				6B4ABF4426DDF1C70010A5D0 /* Products */,
+				F5381A175ED4924C38452467 /* Pods */,
+				003C5CEDABD50726F3DDB9E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +116,15 @@
 			path = DDay;
 			sourceTree = "<group>";
 		};
+		F5381A175ED4924C38452467 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4916ABE52811AA144BE18952 /* Pods-DDay.debug.xcconfig */,
+				6C157AF9ECFCC8C4F2B88EE2 /* Pods-DDay.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B4ABF5726DDF1C80010A5D0 /* Build configuration list for PBXNativeTarget "DDay" */;
 			buildPhases = (
+				DCE5FE084583014ACF867992 /* [CP] Check Pods Manifest.lock */,
 				6B4ABF3F26DDF1C70010A5D0 /* Sources */,
 				6B4ABF4026DDF1C70010A5D0 /* Frameworks */,
 				6B4ABF4126DDF1C70010A5D0 /* Resources */,
+				57BD365F745B785CE79E102C /* [CP] Embed Pods Frameworks */,
+				6BC34ED026DF5878001BEF8E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +192,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57BD365F745B785CE79E102C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDay/Pods-DDay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDay/Pods-DDay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDay/Pods-DDay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE5FE084583014ACF867992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DDay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B4ABF3F26DDF1C70010A5D0 /* Sources */ = {
@@ -295,6 +387,7 @@
 		};
 		6B4ABF5826DDF1C80010A5D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4916ABE52811AA144BE18952 /* Pods-DDay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +407,7 @@
 		};
 		6B4ABF5926DDF1C80010A5D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C157AF9ECFCC8C4F2B88EE2 /* Pods-DDay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
