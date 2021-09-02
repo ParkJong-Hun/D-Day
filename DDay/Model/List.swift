@@ -1,18 +1,3 @@
-//
-//  List.swift
-//  DDay
-//
-//  Created by 박종훈 on 2021/08/31.
-//
-
-import Foundation
-
-class List {
-    var list:String
-    var dday:Int
-    
-    init(list:String, dday:Int) {
-        self.list = list
-        self.dday = dday
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e4294336e3cd95dd36db82f5d564fbec1388d9e3d7c3165089ffff0fd0f3e78d
+size 277
