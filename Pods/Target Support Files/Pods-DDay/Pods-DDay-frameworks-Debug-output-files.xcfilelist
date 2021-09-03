@@ -1,2 +1,3 @@
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework
+version https://git-lfs.github.com/spec/v1
+oid sha256:0ce2598c95a4cd9977351783b29cd21a7eff5a2dd39876617647b6338375c562
+size 128
