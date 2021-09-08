@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1698b044c5e63e34558ca4f954148076e6435ed24ce257279eced37cf545ff80
-size 227
+//
+//  DateCell.swift
+//  DDay
+//
+//  Created by 박종훈 on 2021/09/02.
+//
+
+import Foundation
+import UIKit
+
+class DateCell:UITableViewCell {
+    @IBOutlet weak var Label: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+}

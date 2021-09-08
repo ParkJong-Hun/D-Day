@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9770c877188189af8f5031938e7e9d715672631f4519d90821686ddd004dba35
-size 244
+//
+//  CategoryCell.swift
+//  DDay
+//
+//  Created by 박종훈 on 2021/09/02.
+//
+
+import Foundation
+import UIKit
+
+class CategoryCell:UITableViewCell {
+    @IBOutlet weak var Label: UILabel!
+    @IBOutlet weak var CategoryLabel: UILabel!
+    
+}

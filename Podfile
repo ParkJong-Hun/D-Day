@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d8dde19f4adee45a18a2c9ec5780a90f8786e991cb809fe7ee75c69b08edc4e4
-size 239
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DDay' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+pod 'RealmSwift'
+  # Pods for DDay
+end

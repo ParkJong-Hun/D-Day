@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab4b08d5d3c128d26f2608f0c49250865c2b443f246734f518bff834a7d83e7b
-size 1100
+framework module Realm {
+    umbrella header "Realm.h"
+
+    export *
+    module * { export * }
+
+    explicit module Private {
+        header "RLMAccessor.h"
+        header "RLMApp_Private.h"
+        header "RLMArray_Private.h"
+        header "RLMCollection_Private.h"
+        header "RLMDictionary_Private.h"
+        header "RLMObjectBase_Dynamic.h"
+        header "RLMObjectBase_Private.h"
+        header "RLMObjectSchema_Private.h"
+        header "RLMObjectStore.h"
+        header "RLMObject_Private.h"
+        header "RLMProperty_Private.h"
+        header "RLMRealmConfiguration_Private.h"
+        header "RLMRealm_Private.h"
+        header "RLMResults_Private.h"
+        header "RLMSchema_Private.h"
+        header "RLMSet_Private.h"
+        header "RLMSwiftCollectionBase.h"
+        header "RLMSwiftProperty.h"
+        header "RLMSwiftValueStorage.h"
+        header "RLMSyncConfiguration_Private.h"
+        header "RLMSyncUtil_Private.h"
+        header "RLMUser_Private.h"
+    }
+
+    explicit module Dynamic {
+        header "RLMRealm_Dynamic.h"
+        header "RLMObjectBase_Dynamic.h"
+    }
+}

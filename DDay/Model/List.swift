@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50e169465965ea767c45f18eff7082362526013553aaa3595b4d22b267fc5314
-size 261
+//
+//  List.swift
+//  DDay
+//
+//  Created by 박종훈 on 2021/08/31.
+//
+
+import Foundation
+import RealmSwift
+
+class List:Object {
+    @objc dynamic var name:String = "nil"
+    @objc dynamic var day:Date = Date()
+    @objc dynamic var category:String = "nil"
+}
