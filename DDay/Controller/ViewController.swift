@@ -44,11 +44,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         theCell.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"
         if theCell.DDayLabel.text!.contains("--") {
             theCell.DDayLabel.text = "D+\(Calendar.current.dateComponents([.day], from: model[indexPath.row].day, to: Date()).day!)"
-            theCell.DDayLabel.textColor = .blue
+            theCell.EventNameLabel.textColor = .darkGray
+            theCell.DDayLabel.textColor = .darkGray
+            theCell.backgroundColor = .lightGray
         }
         if theCell.DDayLabel.text!.contains("-0") {
             theCell.DDayLabel.text = "D-Day"
             theCell.DDayLabel.textColor = .red
+            theCell.DDayLabel.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         }
         
         switch model[indexPath.row].category {
@@ -69,7 +72,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return theCell
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let list = realm.objects(List.self)
+            try! realm.write {
+                realm.delete(list[indexPath.row])
+            }
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
+    }
     
     
     
