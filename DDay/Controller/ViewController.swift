@@ -33,15 +33,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model = realm.objects(List.self)
-        print(realm.objects(List.self))
+        
         return model.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = realm.objects(List.self)
         let theCell = tableView.dequeueReusableCell(withIdentifier: "Listing") as! ListCell
         theCell.EventNameLabel.text = model[indexPath.row].name
-        print(model[indexPath.row].day)
-        print(Date())
+        
         theCell.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"
         if theCell.DDayLabel.text!.contains("--") {
             theCell.DDayLabel.text = "D+\(Calendar.current.dateComponents([.day], from: model[indexPath.row].day, to: Date()).day!)"
@@ -50,6 +49,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if theCell.DDayLabel.text!.contains("-0") {
             theCell.DDayLabel.text = "D-Day"
             theCell.DDayLabel.textColor = .red
+        }
+        
+        switch model[indexPath.row].category {
+        case "Life":
+            theCell.CategoryImage.image = UIImage(systemName: "heart.fill")
+            theCell.CategoryImage.tintColor = .systemPink
+            break
+        case "Work":
+            theCell.CategoryImage.image = UIImage(systemName: "bag.fill")
+            theCell.CategoryImage.tintColor = .brown
+            break
+        case "Birthday":
+            theCell.CategoryImage.image = UIImage(systemName: "burst.fill")
+            theCell.CategoryImage.tintColor = .systemOrange
+            break
+        default:
+            break
         }
         return theCell
     }
