@@ -9,18 +9,18 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class AddEventController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AddEventController:UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Async
-        let time = DispatchTime.now() + .milliseconds(300)
+        let time = DispatchTime.now() + .milliseconds(700)
         DispatchQueue.main.asyncAfter(deadline: time) {
             self.date_cell!.DateLabel.text = Date().toString()
+            self.event_name_cell!.TextField.delegate = self
         }
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
@@ -69,6 +69,7 @@ class AddEventController:UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == cellLists.firstIndex(where: {$0 == "Date"}) {
             date_picker.isHidden = false
+            self.event_name_cell!.TextField.endEditing(true)
         } else {
             date_picker.isHidden = true
         }
@@ -109,6 +110,9 @@ class AddEventController:UIViewController, UITableViewDelegate, UITableViewDataS
             realm.add(new_list)
         }
         
+        let appDeleagate = UIApplication.shared.delegate as? AppDelegate
+        appDeleagate?.categoryText = "None"
+        
         self.navigationController?.popViewController(animated: false)
     }
     
@@ -136,6 +140,10 @@ class AddEventController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     
+    //MARK: Disappear Keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.event_name_cell!.TextField.endEditing(true)
+   }
 }
 
 extension Date {
