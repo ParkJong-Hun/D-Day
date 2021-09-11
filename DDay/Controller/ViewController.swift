@@ -42,6 +42,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         theCell.EventNameLabel.text = model[indexPath.row].name
         
         theCell.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"
+        theCell.EventNameLabel.textColor = .black
+        theCell.DDayLabel.textColor = .black
+        theCell.backgroundColor = .none
+        
         if theCell.DDayLabel.text!.contains("--") {
             theCell.DDayLabel.text = "D+\(Calendar.current.dateComponents([.day], from: model[indexPath.row].day, to: Date()).day!)"
             theCell.EventNameLabel.textColor = .darkGray
@@ -68,6 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             theCell.CategoryImage.tintColor = .systemOrange
             break
         default:
+            theCell.CategoryImage.image = nil
             break
         }
         return theCell
