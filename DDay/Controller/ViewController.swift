@@ -86,7 +86,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let controller = storyboard?.instantiateViewController(identifier: "InformationController") as? UIViewController else { return }
+            
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        self.present(controller, animated: true)
+    }
     
     
     
