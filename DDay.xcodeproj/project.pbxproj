@@ -19,6 +19,12 @@
 		6B4ABF5026DDF1C80010A5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4ABF4F26DDF1C80010A5D0 /* Assets.xcassets */; };
 		6B4ABF5326DDF1C80010A5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4ABF5126DDF1C80010A5D0 /* LaunchScreen.storyboard */; };
 		6B797A0526E224EE0076A2CF /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B797A0426E224EE0076A2CF /* CategoryController.swift */; };
+		6B7D91A826EF511200D5A9B6 /* EditEventNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91A726EF511200D5A9B6 /* EditEventNameCell.swift */; };
+		6B7D91AA26EF512300D5A9B6 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91A926EF512300D5A9B6 /* EditDateCell.swift */; };
+		6B7D91AC26EF513000D5A9B6 /* EditCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91AB26EF513000D5A9B6 /* EditCategoryCell.swift */; };
+		6B7D91AE26EF514800D5A9B6 /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91AD26EF514800D5A9B6 /* InformationController.swift */; };
+		6B7D91B026EF515300D5A9B6 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91AF26EF515300D5A9B6 /* EditController.swift */; };
+		6B7D91B226EF515D00D5A9B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91B126EF515D00D5A9B6 /* CalendarController.swift */; };
 		6BBA60B126E0ABAE008FD70E /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA60B026E0ABAE008FD70E /* AddEventController.swift */; };
 		6BC34ECF26DF5878001BEF8E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE5F932FDC7E8C03E62743AC /* Pods_DDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4231D7672A512C9CEAA0 /* Pods_DDay.framework */; };
@@ -55,6 +61,12 @@
 		6B4ABF5226DDF1C80010A5D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B4ABF5426DDF1C80010A5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B797A0426E224EE0076A2CF /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		6B7D91A726EF511200D5A9B6 /* EditEventNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventNameCell.swift; sourceTree = "<group>"; };
+		6B7D91A926EF512300D5A9B6 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
+		6B7D91AB26EF513000D5A9B6 /* EditCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryCell.swift; sourceTree = "<group>"; };
+		6B7D91AD26EF514800D5A9B6 /* InformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationController.swift; sourceTree = "<group>"; };
+		6B7D91AF26EF515300D5A9B6 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
+		6B7D91B126EF515D00D5A9B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		6BBA60B026E0ABAE008FD70E /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		6BC34EC626DF56F5001BEF8E /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC34EC726DF56F5001BEF8E /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +144,9 @@
 				6B797A0426E224EE0076A2CF /* CategoryController.swift */,
 				6BBA60B026E0ABAE008FD70E /* AddEventController.swift */,
 				6B4ABF4A26DDF1C70010A5D0 /* ViewController.swift */,
+				6B7D91AD26EF514800D5A9B6 /* InformationController.swift */,
+				6B7D91AF26EF515300D5A9B6 /* EditController.swift */,
+				6B7D91B126EF515D00D5A9B6 /* CalendarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +159,9 @@
 				6B06038626E0ED8400AEF549 /* DateCell.swift */,
 				6B06038826E0EDD100AEF549 /* CategoryCell.swift */,
 				6B2BD1F926E745740051C6A6 /* ListCell.swift */,
+				6B7D91A726EF511200D5A9B6 /* EditEventNameCell.swift */,
+				6B7D91A926EF512300D5A9B6 /* EditDateCell.swift */,
+				6B7D91AB26EF513000D5A9B6 /* EditCategoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,14 +291,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4ABF4B26DDF1C70010A5D0 /* ViewController.swift in Sources */,
+				6B7D91B226EF515D00D5A9B6 /* CalendarController.swift in Sources */,
 				6B06038526E0ED1100AEF549 /* EventNameCell.swift in Sources */,
 				6B06038726E0ED8400AEF549 /* DateCell.swift in Sources */,
+				6B7D91A826EF511200D5A9B6 /* EditEventNameCell.swift in Sources */,
 				6B2BD1FA26E745750051C6A6 /* ListCell.swift in Sources */,
+				6B7D91AA26EF512300D5A9B6 /* EditDateCell.swift in Sources */,
 				6B06038926E0EDD100AEF549 /* CategoryCell.swift in Sources */,
 				6B3F0DCC26DE3A9400DB9B00 /* List.swift in Sources */,
 				6BBA60B126E0ABAE008FD70E /* AddEventController.swift in Sources */,
 				6B4ABF4726DDF1C70010A5D0 /* AppDelegate.swift in Sources */,
+				6B7D91B026EF515300D5A9B6 /* EditController.swift in Sources */,
+				6B7D91AC26EF513000D5A9B6 /* EditCategoryCell.swift in Sources */,
 				6B4ABF4926DDF1C70010A5D0 /* SceneDelegate.swift in Sources */,
+				6B7D91AE26EF514800D5A9B6 /* InformationController.swift in Sources */,
 				6B797A0526E224EE0076A2CF /* CategoryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
