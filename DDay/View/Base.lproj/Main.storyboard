@@ -97,7 +97,7 @@
         <!--Information-->
         <scene sceneID="jNw-Gd-kkn">
             <objects>
-                <viewController restorationIdentifier="InformationController" storyboardIdentifier="InformationController" title="Information" id="a5e-si-9NF" sceneMemberID="viewController">
+                <viewController restorationIdentifier="InformationController" storyboardIdentifier="InformationController" title="Information" id="a5e-si-9NF" customClass="InformationController" customModule="DDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fHJ-EY-aRE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,13 +123,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-YK-OVF">
-                                <rect key="frame" x="71" y="436" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="AkR-zX-Rcp"/>
-                                    <constraint firstAttribute="height" constant="50" id="cMp-nP-zC2"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr4-Iq-GnV">
                                 <rect key="frame" x="20" y="540" width="374" height="36"/>
                                 <constraints>
@@ -137,29 +130,46 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="clicked_edit_button:" destination="a5e-si-9NF" eventType="touchUpInside" id="ACp-W7-vgd"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAn-YK-OVF">
+                                <rect key="frame" x="128" y="428" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8lK-ar-0eg"/>
+                                    <constraint firstAttribute="height" constant="40" id="ImF-Fv-7RX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dKu-67-EzI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BzV-WG-dpz" firstAttribute="leading" secondItem="dKu-67-EzI" secondAttribute="leading" constant="20" id="2cd-Ez-avP"/>
-                            <constraint firstItem="cAn-YK-OVF" firstAttribute="top" secondItem="8ZO-mO-bAG" secondAttribute="bottom" constant="14" id="4dT-YN-nhf"/>
                             <constraint firstItem="8ZO-mO-bAG" firstAttribute="leading" secondItem="dKu-67-EzI" secondAttribute="leading" constant="20" id="CZi-7d-P42"/>
-                            <constraint firstItem="dKu-67-EzI" firstAttribute="trailing" secondItem="cAn-YK-OVF" secondAttribute="trailing" constant="293" id="DV8-uo-6oU"/>
+                            <constraint firstItem="cAn-YK-OVF" firstAttribute="top" secondItem="8ZO-mO-bAG" secondAttribute="bottom" constant="6" id="Hk8-Gw-fAm"/>
                             <constraint firstItem="hiN-mG-1EN" firstAttribute="top" secondItem="8ZO-mO-bAG" secondAttribute="bottom" constant="8" symbolic="YES" id="J4E-GH-LnM"/>
                             <constraint firstItem="hiN-mG-1EN" firstAttribute="centerX" secondItem="fHJ-EY-aRE" secondAttribute="centerX" id="Pz4-to-4x8"/>
                             <constraint firstItem="BzV-WG-dpz" firstAttribute="top" secondItem="hiN-mG-1EN" secondAttribute="bottom" constant="8" symbolic="YES" id="TvX-eh-as2"/>
                             <constraint firstItem="hiN-mG-1EN" firstAttribute="centerY" secondItem="fHJ-EY-aRE" secondAttribute="centerY" id="U5w-cd-Tjd"/>
+                            <constraint firstItem="BzV-WG-dpz" firstAttribute="top" secondItem="cAn-YK-OVF" secondAttribute="bottom" constant="6" id="UEc-YX-CIi"/>
                             <constraint firstItem="dKu-67-EzI" firstAttribute="trailing" secondItem="BzV-WG-dpz" secondAttribute="trailing" constant="20" id="UVn-Eg-RzB"/>
                             <constraint firstItem="dKu-67-EzI" firstAttribute="trailing" secondItem="hiN-mG-1EN" secondAttribute="trailing" constant="107" id="UkH-8q-yef"/>
                             <constraint firstItem="hiN-mG-1EN" firstAttribute="leading" secondItem="dKu-67-EzI" secondAttribute="leading" constant="107" id="VbG-fY-ePC"/>
-                            <constraint firstItem="cAn-YK-OVF" firstAttribute="leading" secondItem="dKu-67-EzI" secondAttribute="leading" constant="71" id="XqM-wM-10J"/>
+                            <constraint firstItem="cAn-YK-OVF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dKu-67-EzI" secondAttribute="leading" constant="128" id="W9k-Wy-DpV"/>
+                            <constraint firstItem="dKu-67-EzI" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cAn-YK-OVF" secondAttribute="trailing" constant="246" id="nCJ-MT-aOV"/>
                             <constraint firstItem="dKu-67-EzI" firstAttribute="trailing" secondItem="8ZO-mO-bAG" secondAttribute="trailing" constant="20" id="p4z-ju-z1d"/>
                             <constraint firstItem="Jr4-Iq-GnV" firstAttribute="leading" secondItem="dKu-67-EzI" secondAttribute="leading" constant="20" id="rSk-o0-ZXG"/>
                             <constraint firstItem="Jr4-Iq-GnV" firstAttribute="top" secondItem="BzV-WG-dpz" secondAttribute="bottom" constant="45.5" id="v1k-jK-WCX"/>
                             <constraint firstItem="dKu-67-EzI" firstAttribute="trailing" secondItem="Jr4-Iq-GnV" secondAttribute="trailing" constant="20" id="yJZ-RV-fuz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CategoryImage" destination="cAn-YK-OVF" id="aGI-68-4rh"/>
+                        <outlet property="DDayLabel" destination="hiN-mG-1EN" id="g1l-eM-qgK"/>
+                        <outlet property="DateLabel" destination="BzV-WG-dpz" id="ixg-Sl-Zpu"/>
+                        <outlet property="EventNameLabel" destination="8ZO-mO-bAG" id="tqX-IE-c3F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G40-Rf-ian" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
