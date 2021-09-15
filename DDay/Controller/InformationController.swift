@@ -17,6 +17,7 @@ class InformationController:UIViewController {
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var CategoryImage: UIImageView!
     @IBAction func clicked_edit_button(_ sender: Any) {
-        
+        let controller = storyboard?.instantiateViewController(identifier: "EditController") as? EditController
+        self.show(controller!, sender: UIButton.self)
     }
 }

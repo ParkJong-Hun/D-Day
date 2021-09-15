@@ -178,27 +178,27 @@
         <!--Edit-->
         <scene sceneID="aMv-kK-5h5">
             <objects>
-                <viewController title="Edit" id="InV-az-AZp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditController" title="Edit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="InV-az-AZp" customClass="EditController" customModule="DDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jat-dx-8q3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bly-X1-XKz">
-                                <rect key="frame" x="0.0" y="376" width="414" height="180"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bly-X1-XKz">
+                                <rect key="frame" x="0.0" y="376" width="414" height="144"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="144" id="MMy-gx-moP"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditEventName" id="oOa-eg-lwg">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditEventName" id="oOa-eg-lwg" customClass="EditEventNameCell">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oOa-eg-lwg" id="S0S-t4-rEd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC1-lo-Y1W">
-                                                    <rect key="frame" x="20" y="11" width="90" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="bx9-81-w5u"/>
                                                     </constraints>
@@ -207,7 +207,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event title" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7y-Xa-Khf">
-                                                    <rect key="frame" x="194" y="5" width="200" height="35"/>
+                                                    <rect key="frame" x="194" y="5" width="200" height="34.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="S9j-4s-vT9"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="rHY-xK-whQ"/>
@@ -226,8 +226,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditDate" id="wxs-9C-0bz">
-                                        <rect key="frame" x="0.0" y="68" width="414" height="43"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditDate" id="wxs-9C-0bz" customClass="EditDateCell">
+                                        <rect key="frame" x="0.0" y="67.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wxs-9C-0bz" id="fZy-EV-kGu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
@@ -262,15 +262,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EditCategory" id="41f-We-ftI">
-                                        <rect key="frame" x="0.0" y="111" width="414" height="41.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EditCategory" id="41f-We-ftI" customClass="EditCategoryCell">
+                                        <rect key="frame" x="0.0" y="110.5" width="414" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="41f-We-ftI" id="3pu-Km-rfZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="41.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrB-zE-DaE">
-                                                    <rect key="frame" x="20" y="10" width="70" height="21.5"/>
+                                                    <rect key="frame" x="20" y="10" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="JbK-O8-OeZ"/>
                                                     </constraints>
@@ -279,7 +279,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsJ-e9-KHb">
-                                                    <rect key="frame" x="343" y="10" width="41" height="21.5"/>
+                                                    <rect key="frame" x="343" y="10" width="41" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="41" id="3Uf-xi-yWu"/>
                                                     </constraints>
@@ -312,12 +312,15 @@
                             <constraint firstItem="P3C-X1-wvd" firstAttribute="top" secondItem="bly-X1-XKz" secondAttribute="bottom" constant="8" symbolic="YES" id="IBq-a3-cqW"/>
                             <constraint firstItem="bly-X1-XKz" firstAttribute="leading" secondItem="7qn-yE-meD" secondAttribute="leading" id="UZL-bJ-BRD"/>
                             <constraint firstItem="bly-X1-XKz" firstAttribute="trailing" secondItem="7qn-yE-meD" secondAttribute="trailing" id="ksC-ed-X29"/>
-                            <constraint firstItem="7qn-yE-meD" firstAttribute="bottom" secondItem="bly-X1-XKz" secondAttribute="bottom" constant="342" id="mEL-Yg-QOW"/>
                             <constraint firstItem="bly-X1-XKz" firstAttribute="top" secondItem="7qn-yE-meD" secondAttribute="top" constant="332" id="oHY-oL-VIO"/>
                             <constraint firstItem="7qn-yE-meD" firstAttribute="trailing" secondItem="P3C-X1-wvd" secondAttribute="trailing" constant="20" id="vBS-Ap-Jx9"/>
                             <constraint firstItem="P3C-X1-wvd" firstAttribute="leading" secondItem="7qn-yE-meD" secondAttribute="leading" constant="20" id="y4v-AH-tjC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NVa-Vr-X3d"/>
+                    <connections>
+                        <outlet property="tableView" destination="bly-X1-XKz" id="aaA-fl-gEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEx-bP-bfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

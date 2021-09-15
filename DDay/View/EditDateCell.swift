@@ -6,3 +6,7 @@
 //
 
 import Foundation
+import UIKit
+
+class EditDateCell:UITableViewCell {
+}
