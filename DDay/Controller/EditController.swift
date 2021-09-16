@@ -22,6 +22,9 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //MARK: Table
     @IBOutlet weak var tableView: UITableView!
     let cellLists = ["EditEventName", "EditDate", "EditCategory"]
+    var editEventNameCell:EditEventNameCell?
+    var editDateCell:EditDateCell?
+    var editCategoryCell:EditCategoryCell?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cellLists.count
     }
@@ -30,10 +33,13 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: cellLists[indexPath.row])!
         switch cellLists[indexPath.row] {
         case "EditEventName":
+            editEventNameCell = cell as? EditEventNameCell
             break
-        case "EditData":
+        case "EditDate":
+            editDateCell = cell as? EditDateCell
             break
         case "EditCategory":
+            editCategoryCell = cell as? EditCategoryCell
             break
         default:
             break

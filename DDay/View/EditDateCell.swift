@@ -9,4 +9,6 @@ import Foundation
 import UIKit
 
 class EditDateCell:UITableViewCell {
+    @IBOutlet weak var Label: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
 }

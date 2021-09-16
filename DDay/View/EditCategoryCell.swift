@@ -9,4 +9,6 @@ import Foundation
 import UIKit
 
 class EditCategoryCell:UITableViewCell {
+    @IBOutlet weak var CategoryLabel: UILabel!
+    @IBOutlet weak var Label: UILabel!
 }

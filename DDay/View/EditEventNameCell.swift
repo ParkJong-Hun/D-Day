@@ -9,4 +9,6 @@ import Foundation
 import UIKit
 
 class EditEventNameCell:UITableViewCell {
+    @IBOutlet weak var TextField: UITextField!
+    @IBOutlet weak var Label: UILabel!
 }

@@ -190,7 +190,7 @@
                                     <constraint firstAttribute="height" constant="144" id="MMy-gx-moP"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditEventName" id="oOa-eg-lwg" customClass="EditEventNameCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EditEventNameCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditEventName" id="oOa-eg-lwg" customClass="EditEventNameCell" customModule="DDay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oOa-eg-lwg" id="S0S-t4-rEd">
@@ -225,8 +225,12 @@
                                                 <constraint firstItem="S7y-Xa-Khf" firstAttribute="top" secondItem="S0S-t4-rEd" secondAttribute="top" constant="5" id="ka9-4N-h3d"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Label" destination="fC1-lo-Y1W" id="7e4-n8-D6y"/>
+                                            <outlet property="TextField" destination="S7y-Xa-Khf" id="X7A-XP-bGD"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditDate" id="wxs-9C-0bz" customClass="EditDateCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EditDateCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditDate" id="wxs-9C-0bz" customClass="EditDateCell" customModule="DDay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="67.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wxs-9C-0bz" id="fZy-EV-kGu">
@@ -261,8 +265,12 @@
                                                 <constraint firstItem="vL4-jZ-2gq" firstAttribute="top" secondItem="fZy-EV-kGu" secondAttribute="top" constant="10" id="VyZ-qH-qsW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="DateLabel" destination="vL4-jZ-2gq" id="1wd-5C-Cmp"/>
+                                            <outlet property="Label" destination="OPi-EK-Ogj" id="g1O-CC-rfr"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EditCategory" id="41f-We-ftI" customClass="EditCategoryCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EditCategoryCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EditCategory" id="41f-We-ftI" customClass="EditCategoryCell" customModule="DDay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="110.5" width="414" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="41f-We-ftI" id="3pu-Km-rfZ">
@@ -297,6 +305,10 @@
                                                 <constraint firstItem="hsJ-e9-KHb" firstAttribute="top" secondItem="3pu-Km-rfZ" secondAttribute="top" constant="10" id="vKx-X9-ynF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CategoryLabel" destination="hsJ-e9-KHb" id="xSh-87-UNA"/>
+                                            <outlet property="Label" destination="yrB-zE-DaE" id="AAC-9V-cxe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -518,7 +530,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Label" destination="AgB-kJ-vBr" id="5Zb-GD-Mw0"/>
-                                            <outlet property="TextField" destination="hol-Gr-CNb" id="o7D-YF-rrB"/>
+                                            <outlet property="TextField" destination="hol-Gr-CNb" id="NDl-UM-fVy"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Date" id="DTE-AT-qW1" customClass="DateCell" customModule="DDay" customModuleProvider="target">
