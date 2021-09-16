@@ -92,9 +92,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.deselectRow(at: indexPath, animated: false)
         
         let model = realm.objects(List.self)
-        
         self.present(controller, animated: true)
         
+        controller.data_row = indexPath.row
         controller.EventNameLabel.text! = model[indexPath.row].name
         controller.DateLabel.text! = model[indexPath.row].day.toString()
         controller.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"

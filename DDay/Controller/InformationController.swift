@@ -12,12 +12,15 @@ class InformationController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    var data_row:Int = 0
+    
     @IBOutlet weak var EventNameLabel: UILabel!
     @IBOutlet weak var DDayLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var CategoryImage: UIImageView!
     @IBAction func clicked_edit_button(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(identifier: "EditController") as? EditController
+        controller?.data_row = data_row
         self.show(controller!, sender: UIButton.self)
     }
 }

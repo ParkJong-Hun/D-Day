@@ -7,15 +7,16 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class EditController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    
+    var data_row:Int = 0
     
     
     
@@ -30,16 +31,20 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = realm.objects(List.self)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellLists[indexPath.row])!
         switch cellLists[indexPath.row] {
         case "EditEventName":
             editEventNameCell = cell as? EditEventNameCell
+            editEventNameCell?.TextField.text = model[data_row].name
             break
         case "EditDate":
             editDateCell = cell as? EditDateCell
+            editDateCell?.DateLabel.text = model[data_row].day.toString()
             break
         case "EditCategory":
             editCategoryCell = cell as? EditCategoryCell
+            editCategoryCell?.CategoryLabel.text = model[data_row].category
             break
         default:
             break
