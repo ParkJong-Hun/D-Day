@@ -21,7 +21,8 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     //MARK: Calendar
     var selectedDate:Date = Date()
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        selectedDate = date
+        let appDeleagate = UIApplication.shared.delegate as? AppDelegate
+        appDeleagate?.selectedDate = date
     }
     
     

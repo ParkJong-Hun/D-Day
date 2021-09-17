@@ -14,10 +14,21 @@ class InformationController:UIViewController {
     }
     var data_row:Int = 0
     
+    
+    
+    
+    
+    //MARK: Views
     @IBOutlet weak var EventNameLabel: UILabel!
     @IBOutlet weak var DDayLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var CategoryImage: UIImageView!
+    
+    
+    
+    
+    
+    //MARK: OK Button
     @IBAction func clicked_edit_button(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(identifier: "EditController") as? EditController
         controller?.data_row = data_row

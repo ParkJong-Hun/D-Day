@@ -9,14 +9,37 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class EditController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EditController:UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let model = realm.objects(List.self)
+        
+        //Async
+        let time = DispatchTime.now() + .milliseconds(700)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.editDateCell!.DateLabel.text = model[self.data_row].day.toString()
+            self.editEventNameCell!.TextField.delegate = self
+        }
         tableView.delegate = self
         tableView.dataSource = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //Async
+        let time = DispatchTime.now() + .milliseconds(700)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate.toString()
+        }
+        tableView.reloadData()
+        //TODO: This is error.
+    }
     var data_row:Int = 0
+    
+    
     
     
     
@@ -29,7 +52,6 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cellLists.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = realm.objects(List.self)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellLists[indexPath.row])!
@@ -54,9 +76,17 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if cellLists[indexPath.row] == "EditDate" {
             let controller = (storyboard?.instantiateViewController(identifier: "CalendarController"))! as CalendarController
+            let model = realm.objects(List.self)
+            controller.selectedDate = model[indexPath.row].day
             self.show(controller, sender: UIButton.self)
         }
     }
+    
+    
+    
+    
+    
+    //MARK: OK Button
     @IBAction func clicked_ok_button(_ sender: Any) {
         dismiss(animated: true)
     }

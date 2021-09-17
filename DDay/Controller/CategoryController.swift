@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class CategoryController:UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -25,11 +24,11 @@ class CategoryController:UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cellLists.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellLists[indexPath.row])!
         return cell
     }
+    
     
     
     
