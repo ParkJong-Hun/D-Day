@@ -13,4 +13,23 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    
+    
+    
+    //MARK: Calendar
+    var selectedDate:Date = Date()
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        selectedDate = date
+    }
+    
+    
+    
+    
+    
+    //MARK: OK Button
+    @IBAction func clicked_ok_button(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }

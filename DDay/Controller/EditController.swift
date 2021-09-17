@@ -51,4 +51,13 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if cellLists[indexPath.row] == "EditDate" {
+            let controller = (storyboard?.instantiateViewController(identifier: "CalendarController"))! as CalendarController
+            self.show(controller, sender: UIButton.self)
+        }
+    }
+    @IBAction func clicked_ok_button(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
