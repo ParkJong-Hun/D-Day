@@ -28,14 +28,18 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        let model = realm.objects(List.self)
+        
+        print("실행됨")
         //Async
-        let time = DispatchTime.now() + .milliseconds(700)
+        let time = DispatchTime.now() + .milliseconds(300)
         DispatchQueue.main.asyncAfter(deadline: time) {
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
-            self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate.toString()
+            self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate?.toString() ?? model[self.data_row].day.toString()
+            appDelegate?.selectedDate = nil
         }
         tableView.reloadData()
-        //TODO: This is error.
     }
     var data_row:Int = 0
     
@@ -78,6 +82,8 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
             let controller = (storyboard?.instantiateViewController(identifier: "CalendarController"))! as CalendarController
             let model = realm.objects(List.self)
             controller.selectedDate = model[indexPath.row].day
+            //Because viewWillAppear function of previous ViewController don't be called for Modally dismissing
+            controller.modalPresentationStyle = .fullScreen
             self.show(controller, sender: UIButton.self)
         }
     }

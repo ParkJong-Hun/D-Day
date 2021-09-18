@@ -12,7 +12,9 @@ import FSCalendar
 class CalendarController:UIViewController, FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        CalendarView.delegate = self
     }
+    @IBOutlet weak var CalendarView: FSCalendar!
     
     
     
@@ -21,8 +23,7 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     //MARK: Calendar
     var selectedDate:Date = Date()
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let appDeleagate = UIApplication.shared.delegate as? AppDelegate
-        appDeleagate?.selectedDate = date
+        selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
     }
     
     
@@ -31,6 +32,9 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     
     //MARK: OK Button
     @IBAction func clicked_ok_button(_ sender: Any) {
+        let appDeleagate = UIApplication.shared.delegate as? AppDelegate
+        //FSCalendar have error. therefore, plus one day.
+        appDeleagate?.selectedDate = selectedDate
         dismiss(animated: true)
     }
 }
