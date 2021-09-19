@@ -38,6 +38,8 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate?.toString() ?? model[self.data_row].day.toString()
             appDelegate?.selectedDate = nil
+            self.editCategoryCell?.CategoryLabel.text! = appDelegate?.categoryText ?? "None"
+            appDelegate?.categoryText = "None"
         }
         tableView.reloadData()
     }
@@ -83,6 +85,10 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
             let model = realm.objects(List.self)
             controller.selectedDate = model[indexPath.row].day
             //Because viewWillAppear function of previous ViewController don't be called for Modally dismissing
+            controller.modalPresentationStyle = .fullScreen
+            self.show(controller, sender: UIButton.self)
+        } else if cellLists[indexPath.row] == "EditCategory" {
+            let controller = (storyboard?.instantiateViewController(identifier: "EditCategoryController"))! as EditCategoryController
             controller.modalPresentationStyle = .fullScreen
             self.show(controller, sender: UIButton.self)
         }

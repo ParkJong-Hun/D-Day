@@ -25,6 +25,7 @@
 		6B7D91AE26EF514800D5A9B6 /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91AD26EF514800D5A9B6 /* InformationController.swift */; };
 		6B7D91B026EF515300D5A9B6 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91AF26EF515300D5A9B6 /* EditController.swift */; };
 		6B7D91B226EF515D00D5A9B6 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D91B126EF515D00D5A9B6 /* CalendarController.swift */; };
+		6B7F1A8E26F6E0EB003221E4 /* EditCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F1A8D26F6E0EB003221E4 /* EditCategoryController.swift */; };
 		6BBA60B126E0ABAE008FD70E /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA60B026E0ABAE008FD70E /* AddEventController.swift */; };
 		6BC34ECF26DF5878001BEF8E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE5F932FDC7E8C03E62743AC /* Pods_DDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4231D7672A512C9CEAA0 /* Pods_DDay.framework */; };
@@ -67,6 +68,7 @@
 		6B7D91AD26EF514800D5A9B6 /* InformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationController.swift; sourceTree = "<group>"; };
 		6B7D91AF26EF515300D5A9B6 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		6B7D91B126EF515D00D5A9B6 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		6B7F1A8D26F6E0EB003221E4 /* EditCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryController.swift; sourceTree = "<group>"; };
 		6BBA60B026E0ABAE008FD70E /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		6BC34EC626DF56F5001BEF8E /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC34EC726DF56F5001BEF8E /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				6B7D91AD26EF514800D5A9B6 /* InformationController.swift */,
 				6B7D91AF26EF515300D5A9B6 /* EditController.swift */,
 				6B7D91B126EF515D00D5A9B6 /* CalendarController.swift */,
+				6B7F1A8D26F6E0EB003221E4 /* EditCategoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				6B06038526E0ED1100AEF549 /* EventNameCell.swift in Sources */,
 				6B06038726E0ED8400AEF549 /* DateCell.swift in Sources */,
 				6B7D91A826EF511200D5A9B6 /* EditEventNameCell.swift in Sources */,
+				6B7F1A8E26F6E0EB003221E4 /* EditCategoryController.swift in Sources */,
 				6B2BD1FA26E745750051C6A6 /* ListCell.swift in Sources */,
 				6B7D91AA26EF512300D5A9B6 /* EditDateCell.swift in Sources */,
 				6B06038926E0EDD100AEF549 /* CategoryCell.swift in Sources */,
