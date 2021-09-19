@@ -100,6 +100,12 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     //MARK: OK Button
     @IBAction func clicked_ok_button(_ sender: Any) {
+        let model = realm.objects(List.self)
+        try? realm.write {
+            model[data_row].name = (editEventNameCell?.TextField.text) ?? "The Event"
+            model[data_row].day = (editDateCell!.DateLabel.text?.toDate())!
+            model[data_row].category = (editCategoryCell?.CategoryLabel.text)!
+        }
         dismiss(animated: true)
     }
 }
