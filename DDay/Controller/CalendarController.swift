@@ -12,6 +12,7 @@ import FSCalendar
 class CalendarController:UIViewController, FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ddd")
         CalendarView.delegate = self
         CalendarView.scrollEnabled = true
         CalendarView.scrollDirection = .vertical

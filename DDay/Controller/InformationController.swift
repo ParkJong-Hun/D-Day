@@ -14,6 +14,7 @@ class InformationController:UIViewController {
     var data_row:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(data_row)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

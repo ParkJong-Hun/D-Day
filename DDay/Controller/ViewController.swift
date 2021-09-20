@@ -32,7 +32,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model = realm.objects(List.self)
-        
         return model.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
