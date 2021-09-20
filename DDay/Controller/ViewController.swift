@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        print("리스트 갱신됨")
         tableView.reloadData()
     }
     
@@ -41,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let theCell = tableView.dequeueReusableCell(withIdentifier: "Listing") as! ListCell
         theCell.EventNameLabel.text = model[indexPath.row].name
         
-        theCell.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"
+        theCell.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"
         theCell.EventNameLabel.textColor = .black
         theCell.DDayLabel.textColor = .black
         theCell.backgroundColor = .none
@@ -88,11 +87,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let controller = storyboard?.instantiateViewController(identifier: "InformationController") as? InformationController else { return }
-        controller.modalPresentationStyle = .fullScreen
         
         tableView.deselectRow(at: indexPath, animated: false)
         
-        self.present(controller, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
         controller.data_row = indexPath.row
     }
     

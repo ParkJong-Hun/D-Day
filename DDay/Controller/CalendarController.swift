@@ -23,7 +23,7 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     //MARK: Calendar
     var selectedDate:Date = Date()
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+        selectedDate = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: date)!
     }
     
     
@@ -35,6 +35,7 @@ class CalendarController:UIViewController, FSCalendarDelegate {
         let appDeleagate = UIApplication.shared.delegate as? AppDelegate
         //FSCalendar have error. therefore, plus one day.
         appDeleagate?.selectedDate = selectedDate
-        dismiss(animated: true)
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }

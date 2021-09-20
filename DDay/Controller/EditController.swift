@@ -32,7 +32,6 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let model = realm.objects(List.self)
         
-        print("실행됨")
         //Async
         let time = DispatchTime.now() + .milliseconds(300)
         DispatchQueue.main.asyncAfter(deadline: time) {
@@ -83,16 +82,13 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if cellLists[indexPath.row] == "EditDate" {
             let controller = (storyboard?.instantiateViewController(identifier: "CalendarController"))! as CalendarController
-            controller.modalPresentationStyle = .fullScreen
             let model = realm.objects(List.self)
             controller.selectedDate = model[indexPath.row].day
             //Because viewWillAppear function of previous ViewController don't be called for Modally dismissing
-            controller.modalPresentationStyle = .fullScreen
-            self.show(controller, sender: UIButton.self)
+            self.navigationController?.pushViewController(controller, animated: true)
         } else if cellLists[indexPath.row] == "EditCategory" {
             let controller = (storyboard?.instantiateViewController(identifier: "EditCategoryController"))! as EditCategoryController
-            controller.modalPresentationStyle = .fullScreen
-            self.show(controller, sender: UIButton.self)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     
@@ -103,11 +99,13 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //MARK: OK Button
     @IBAction func clicked_ok_button(_ sender: Any) {
         let model = realm.objects(List.self)
+        
         try? realm.write {
             model[data_row].name = (editEventNameCell?.TextField.text) ?? "The Event"
             model[data_row].day = (editDateCell!.DateLabel.text?.toDate())!
             model[data_row].category = (editCategoryCell?.CategoryLabel.text)!
         }
-        dismiss(animated: true)
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }

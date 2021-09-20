@@ -36,13 +36,12 @@ class EditCategoryController:UIViewController, UITableViewDelegate, UITableViewD
     //MARK: OK Button
     @IBAction func clicked_ok_button(_ sender: Any) {
         if let row = tableView.indexPathForSelectedRow?.row {
-            print("편집 카테고리 갱신됨")
             
             let appDeleagate = UIApplication.shared.delegate as? AppDelegate
             let index = cellLists[row].index(cellLists[row].startIndex, offsetBy: 4)
             appDeleagate?.categoryText = String(cellLists[row][index...])
         }
         
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

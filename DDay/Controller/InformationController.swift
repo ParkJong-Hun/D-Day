@@ -23,7 +23,7 @@ class InformationController:UIViewController {
         DispatchQueue.main.asyncAfter(deadline: time) {
             self.EventNameLabel.text = model[self.data_row].name
             self.DateLabel.text = model[self.data_row].day.toString()
-            self.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[self.data_row].day).day!)"
+            self.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!, to: model[self.data_row].day).day!)"
             if self.DDayLabel.text!.contains("--") {
                 self.DDayLabel.text = "D+\(Calendar.current.dateComponents([.day], from: model[self.data_row].day, to: Date()).day!)"
             }
@@ -67,7 +67,7 @@ class InformationController:UIViewController {
     @IBAction func clicked_edit_button(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(identifier: "EditController") as? EditController
         controller?.data_row = data_row
-        controller?.modalPresentationStyle = .fullScreen
-        self.show(controller!, sender: UIButton.self)
+        
+        self.navigationController?.pushViewController(controller!, animated: true)
     }
 }
