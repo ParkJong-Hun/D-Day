@@ -30,14 +30,12 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        let model = realm.objects(List.self)
-        
         //Async
         let time = DispatchTime.now() + .milliseconds(300)
         DispatchQueue.main.asyncAfter(deadline: time) {
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
-            self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate?.toString() ?? model[self.data_row].day.toString()
-            appDelegate?.selectedDate = nil
+            self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate.toString()
+            appDelegate?.selectedDate = Date()
             self.editCategoryCell?.CategoryLabel.text! = appDelegate?.categoryText ?? "None"
             appDelegate?.categoryText = "None"
         }

@@ -13,6 +13,8 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         CalendarView.delegate = self
+        CalendarView.scrollEnabled = true
+        CalendarView.scrollDirection = .vertical
     }
     @IBOutlet weak var CalendarView: FSCalendar!
     
@@ -33,7 +35,6 @@ class CalendarController:UIViewController, FSCalendarDelegate {
     //MARK: OK Button
     @IBAction func clicked_ok_button(_ sender: Any) {
         let appDeleagate = UIApplication.shared.delegate as? AppDelegate
-        //FSCalendar have error. therefore, plus one day.
         appDeleagate?.selectedDate = selectedDate
         
         self.navigationController?.popViewController(animated: true)
