@@ -88,39 +88,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let controller = storyboard?.instantiateViewController(identifier: "InformationController") as? InformationController else { return }
+        controller.modalPresentationStyle = .fullScreen
         
         tableView.deselectRow(at: indexPath, animated: false)
         
-        let model = realm.objects(List.self)
         self.present(controller, animated: true)
-        
         controller.data_row = indexPath.row
-        controller.EventNameLabel.text! = model[indexPath.row].name
-        controller.DateLabel.text! = model[indexPath.row].day.toString()
-        controller.DDayLabel.text = "D-\(Calendar.current.dateComponents([.day], from: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!, to: model[indexPath.row].day).day!)"
-        if controller.DDayLabel.text!.contains("--") {
-            controller.DDayLabel.text = "D+\(Calendar.current.dateComponents([.day], from: model[indexPath.row].day, to: Date()).day!)"
-        }
-        if controller.DDayLabel.text!.contains("-0") {
-            controller.DDayLabel.text = "D-Day"
-        }
-        switch model[indexPath.row].category {
-        case "Life":
-            controller.CategoryImage.image = UIImage(systemName: "heart.fill")
-            controller.CategoryImage.tintColor = .systemPink
-            break
-        case "Work":
-            controller.CategoryImage.image = UIImage(systemName: "bag.fill")
-            controller.CategoryImage.tintColor = .brown
-            break
-        case "Birthday":
-            controller.CategoryImage.image = UIImage(systemName: "burst.fill")
-            controller.CategoryImage.tintColor = .orange
-            break
-        default:
-            controller.CategoryImage.image = nil
-            break
-        }
     }
     
     

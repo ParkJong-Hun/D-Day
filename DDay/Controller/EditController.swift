@@ -21,6 +21,7 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         let time = DispatchTime.now() + .milliseconds(700)
         DispatchQueue.main.asyncAfter(deadline: time) {
             self.editDateCell!.DateLabel.text = model[self.data_row].day.toString()
+            self.editCategoryCell?.CategoryLabel.text = model[self.data_row].category
             self.editEventNameCell!.TextField.delegate = self
         }
         tableView.delegate = self
@@ -82,6 +83,7 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if cellLists[indexPath.row] == "EditDate" {
             let controller = (storyboard?.instantiateViewController(identifier: "CalendarController"))! as CalendarController
+            controller.modalPresentationStyle = .fullScreen
             let model = realm.objects(List.self)
             controller.selectedDate = model[indexPath.row].day
             //Because viewWillAppear function of previous ViewController don't be called for Modally dismissing
