@@ -20,9 +20,12 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         //Async
         let time = DispatchTime.now() + .milliseconds(700)
         DispatchQueue.main.asyncAfter(deadline: time) {
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
             self.editDateCell!.DateLabel.text = model[self.data_row].day.toString()
             self.editCategoryCell?.CategoryLabel.text = model[self.data_row].category
             self.editEventNameCell!.TextField.delegate = self
+            appDelegate?.categoryText = (self.editCategoryCell?.CategoryLabel.text)!
+            appDelegate?.selectedDate = (self.editDateCell?.DateLabel.text?.toDate())!
         }
         tableView.delegate = self
         tableView.dataSource = self
@@ -35,9 +38,7 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         DispatchQueue.main.asyncAfter(deadline: time) {
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             self.editDateCell?.DateLabel.text! = appDelegate!.selectedDate.toString()
-            appDelegate?.selectedDate = Date()
             self.editCategoryCell?.CategoryLabel.text! = appDelegate?.categoryText ?? "None"
-            appDelegate?.categoryText = "None"
         }
         tableView.reloadData()
     }
