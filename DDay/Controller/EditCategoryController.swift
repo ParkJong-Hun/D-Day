@@ -34,7 +34,10 @@ class EditCategoryController:UIViewController, UITableViewDelegate, UITableViewD
     
     
     //MARK: OK Button
-    @IBAction func clicked_ok_button(_ sender: Any) {
+    @IBAction func clicked_cancel_button(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func clicked_save_button(_ sender: Any) {
         if let row = tableView.indexPathForSelectedRow?.row {
             
             let appDeleagate = UIApplication.shared.delegate as? AppDelegate
