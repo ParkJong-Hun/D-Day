@@ -94,10 +94,16 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
-    //MARK: OK Button
-    @IBAction func clicked_back_button(_ sender: Any) {
+    //MARK: Cancel Button
+    @IBAction func clicked_cancel_button(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
+    
+    //MARK: Save Button
     @IBAction func clicked_save_button(_ sender: Any) {
         let model = realm.objects(List.self)
         

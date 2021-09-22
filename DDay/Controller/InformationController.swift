@@ -64,10 +64,16 @@ class InformationController:UIViewController {
     
     
     
-    //MARK: OK Button
+    //MARK: Back Button
     @IBAction func clicked_back_button(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
+    
+    //MARK: Edit Button
     @IBAction func clicked_edit_button(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(identifier: "EditController") as? EditController
         controller?.data_row = data_row

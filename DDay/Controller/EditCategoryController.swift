@@ -33,10 +33,16 @@ class EditCategoryController:UIViewController, UITableViewDelegate, UITableViewD
     
     
     
-    //MARK: OK Button
+    //MARK: Cancel button
     @IBAction func clicked_cancel_button(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
+    
+    //MARK: Save Button
     @IBAction func clicked_save_button(_ sender: Any) {
         if let row = tableView.indexPathForSelectedRow?.row {
             
