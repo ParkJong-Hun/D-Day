@@ -147,7 +147,7 @@
                     <navigationItem key="navigationItem" id="7b3-Nh-BMj">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="e3a-83-z7K">
                             <connections>
-                                <action selector="clicked_back_button:" destination="a5e-si-9NF" id="tGj-bl-cnn"/>
+                                <action selector="clicked_back_button:" destination="a5e-si-9NF" id="tF8-UT-dK8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="0Rq-lu-mA7">
@@ -319,7 +319,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0m9-T0-Sqk">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="clicked_back_button:" destination="InV-az-AZp" id="J00-dw-lKz"/>
+                                <action selector="clicked_cancel_button:" destination="InV-az-AZp" id="zTx-YY-gQX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="PDE-5F-RlW">

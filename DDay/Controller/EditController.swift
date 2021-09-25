@@ -97,6 +97,7 @@ class EditController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //MARK: Cancel Button
     @IBAction func clicked_cancel_button(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+
     }
     
     
